@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "quiz": "Quiz",
+    "careers": "Careers",
+    "mentors": "Mentors",
+    "parents": "Parents"
+  },
+  "landing": {
+    "title": "Discover Your Future",
+    "subtitle": "AI-powered career guidance for Sri Lankan students. Find the right path for you, no matter where you are from.",
+    "cta": "Start Career Quiz",
+    "offline_badge": "Available Offline"
+  },
+  "quiz": {
+    "title": "Career Discovery Quiz",
+    "step1": "What stream did you do for A/Ls?",
+    "step2": "What are you most interested in?",
+    "next": "Next",
+    "submit": "Find My Careers",
+    "options": {
+      "maths": "Mathematics",
+      "science": "Science",
+      "arts": "Arts",
+      "commerce": "Commerce",
+      "technology": "Technology",
+      "ol": "Only O/Ls"
+    }
+  },
+  "careers": {
+    "title": "Suggested Careers",
+    "salary": "Average Salary",
+    "qualifications": "Required Qualifications",
+    "institutes": "Where to Study",
+    "scholarships": "Financial Aid"
+  },
+  "mentors": {
+    "title": "Ask a Mentor",
+    "ask_btn": "Ask a Question"
+  },
+  "parents": {
+    "title": "For Parents",
+    "content": "Modern careers offer great opportunities beyond traditional government jobs. Help your child explore fields like IT, digital marketing, and modern vocational trades which offer high salaries and stability."
+  },
+  "chatbot": {
+    "title": "AI Career Guide",
+    "placeholder": "Type your question...",
+    "welcome": "Hello! I'm your AI career guide. Ask me anything about careers in Sri Lanka!",
+    "typing": "AI is typing..."
+  },
+  "auth": {
+    "login_title": "Sign In",
+    "register_title": "Create Account",
+    "email": "Email Address",
+    "password": "Password",
+    "login_btn": "Sign In",
+    "register_btn": "Sign Up",
+    "no_account": "Don't have an account? Sign up",
+    "have_account": "Already have an account? Sign in",
+    "logout": "Log Out"
+  }
+}

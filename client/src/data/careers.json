@@ -1,0 +1,177 @@
+[
+  {
+    "id": "c1",
+    "title": {
+      "en": "Software Engineer",
+      "ta": "மென்பொருள் பொறியாளர்",
+      "si": "මෘදුකාංග ඉංජිනේරු"
+    },
+    "description": {
+      "en": "Builds and maintains websites, mobile apps, and computer systems.",
+      "ta": "இணையதளங்கள், மொபைல் பயன்பாடுகள் மற்றும் கணினி அமைப்புகளை உருவாக்கி பராமரிக்கிறார்.",
+      "si": "වෙබ් අඩවි, ජංගම යෙදුම් සහ පරිගණක පද්ධති ගොඩනැගීම සහ නඩත්තු කිරීම."
+    },
+    "salaryRange": {
+      "en": "Rs. 100,000 - 400,000+ / month",
+      "ta": "ரூ. 100,000 - 400,000+ / மாதம்",
+      "si": "රු. 100,000 - 400,000+ / මාසිකව"
+    },
+    "qualifications": {
+      "en": "Degree in Computer Science or self-taught coding skills.",
+      "ta": "கணினி அறிவியலில் பட்டம் அல்லது சுய-கற்பித்த குறியீட்டு திறன்கள்.",
+      "si": "පරිගණක විද්‍යාව පිළිබඳ උපාධියක් හෝ ස්වයං-උගත් කේතකරණ කුසලතා."
+    },
+    "institutes": {
+      "en": "UCSC, Moratuwa, SLIIT, IIT",
+      "ta": "UCSC, Moratuwa, SLIIT, IIT",
+      "si": "UCSC, Moratuwa, SLIIT, IIT"
+    },
+    "scholarships": {
+      "en": "Mahapola, Govt university free education",
+      "ta": "மகாபொல, அரசு பல்கலைக்கழக இலவச கல்வி",
+      "si": "මහපොළ, රජයේ විශ්වවිද්‍යාල නොමිලේ අධ්‍යාපනය"
+    },
+    "tags": ["technology", "computers", "math", "logic"],
+    "category": "IT"
+  },
+  {
+    "id": "c2",
+    "title": {
+      "en": "Nursing Officer",
+      "ta": "தாதியர்",
+      "si": "හෙද නිලධාරී"
+    },
+    "description": {
+      "en": "Provides medical care, works with doctors, and helps patients recover.",
+      "ta": "மருத்துவ பராமரிப்பு வழங்குகிறார், மருத்துவர்களுடன் பணிபுரிகிறார், மற்றும் நோயாளிகள் குணமடைய உதவுகிறார்.",
+      "si": "වෛද්‍ය ප්‍රතිකාර ලබා දීම, වෛද්‍යවරුන් සමඟ වැඩ කිරීම සහ රෝගීන්ට සුවය ලබා ගැනීමට උපකාර කිරීම."
+    },
+    "salaryRange": {
+      "en": "Rs. 60,000 - 150,000 / month",
+      "ta": "ரூ. 60,000 - 150,000 / மாதம்",
+      "si": "රු. 60,000 - 150,000 / මාසිකව"
+    },
+    "qualifications": {
+      "en": "Nursing Diploma or BSc in Nursing.",
+      "ta": "நர்சிங் டிப்ளோமா அல்லது நர்சிங் பிஎஸ்சி.",
+      "si": "හෙද ඩිප්ලෝමාව හෝ හෙද විද්‍යාවේදී උපාධිය."
+    },
+    "institutes": {
+      "en": "Govt Nursing Schools, KIU, OUSL",
+      "ta": "அரசு நர்சிங் பள்ளிகள், KIU, OUSL",
+      "si": "රජයේ හෙද පාසල්, KIU, OUSL"
+    },
+    "scholarships": {
+      "en": "Govt nursing school provides stipend",
+      "ta": "அரசு நர்சிங் பள்ளி உதவித்தொகை வழங்குகிறது",
+      "si": "රජයේ හෙද පාසල දීමනාවක් ලබා දෙයි"
+    },
+    "tags": ["healthcare", "science", "helping", "biology"],
+    "category": "Healthcare"
+  },
+  {
+    "id": "c3",
+    "title": {
+      "en": "Electrician / Electrical Technician",
+      "ta": "மின்சார தொழில்நுட்பவியலாளர்",
+      "si": "විදුලි කාර්මික"
+    },
+    "description": {
+      "en": "Installs and repairs electrical systems in homes and buildings.",
+      "ta": "வீடுகள் மற்றும் கட்டிடங்களில் மின் அமைப்புகளை நிறுவுகிறார் மற்றும் பழுதுபார்க்கிறார்.",
+      "si": "නිවාස සහ ගොඩනැගිලි වල විදුලි පද්ධති සවි කිරීම සහ අලුත්වැඩියා කිරීම."
+    },
+    "salaryRange": {
+      "en": "Rs. 50,000 - 150,000 / month (or freelance)",
+      "ta": "ரூ. 50,000 - 150,000 / மாதம் (அல்லது சுயாதீன)",
+      "si": "රු. 50,000 - 150,000 / මාසිකව (හෝ නිදහස්)"
+    },
+    "qualifications": {
+      "en": "NVQ Level 3 or 4 in Electrical Installation.",
+      "ta": "மின் நிறுவலில் NVQ நிலை 3 அல்லது 4.",
+      "si": "විදුලි ස්ථාපනය පිළිබඳ NVQ මට්ටම 3 හෝ 4."
+    },
+    "institutes": {
+      "en": "Vocational Training Authority (VTA), NAITA, CGTTI",
+      "ta": "தொழில் பயிற்சி அதிகாரம் (VTA), NAITA, CGTTI",
+      "si": "වෘත්තීය පුහුණු අධිකාරිය (VTA), NAITA, CGTTI"
+    },
+    "scholarships": {
+      "en": "Free training courses via Govt VTA",
+      "ta": "அரசு VTA வழியாக இலவச பயிற்சி படிப்புகள்",
+      "si": "රජයේ VTA හරහා නොමිලේ පුහුණු පාඨමාලා"
+    },
+    "tags": ["practical", "hands-on", "engineering", "trades"],
+    "category": "Vocational"
+  },
+  {
+    "id": "c4",
+    "title": {
+      "en": "Digital Marketing Specialist",
+      "ta": "டிஜிட்டல் மார்க்கெட்டிங் நிபுணர்",
+      "si": "ඩිජිටල් අලෙවිකරණ විශේෂඥ"
+    },
+    "description": {
+      "en": "Promotes products online using social media, SEO, and ads.",
+      "ta": "சமூக ஊடகங்கள், SEO மற்றும் விளம்பரங்களைப் பயன்படுத்தி ஆன்லைனில் தயாரிப்புகளை ஊக்குவிக்கிறார்.",
+      "si": "සමාජ මාධ්‍ය, SEO සහ දැන්වීම් භාවිතා කරමින් අන්තර්ජාලය හරහා නිෂ්පාදන ප්‍රවර්ධනය කිරීම."
+    },
+    "salaryRange": {
+      "en": "Rs. 70,000 - 250,000 / month",
+      "ta": "ரூ. 70,000 - 250,000 / மாதம்",
+      "si": "රු. 70,000 - 250,000 / මාසිකව"
+    },
+    "qualifications": {
+      "en": "Diploma/Degree in Marketing or online certifications (Google/Meta).",
+      "ta": "மார்க்கெட்டிங்கில் டிப்ளோமா/பட்டம் அல்லது ஆன்லைன் சான்றிதழ்கள்.",
+      "si": "අලෙවිකරණය පිළිබඳ ඩිප්ලෝමාවක්/උපාධියක් හෝ මාර්ගගත සහතික."
+    },
+    "institutes": {
+      "en": "SLIM, NIBM, Online (Coursera/Google)",
+      "ta": "SLIM, NIBM, ஆன்லைன் (Coursera/Google)",
+      "si": "SLIM, NIBM, මාර්ගගත (Coursera/Google)"
+    },
+    "scholarships": {
+      "en": "Many free online courses available",
+      "ta": "பல இலவச ஆன்லைன் படிப்புகள் உள்ளன",
+      "si": "බොහෝ නොමිලේ මාර්ගගත පාඨමාලා ඇත"
+    },
+    "tags": ["business", "creative", "social-media", "writing"],
+    "category": "Business"
+  },
+  {
+    "id": "c5",
+    "title": {
+      "en": "Agriculture Tech Officer",
+      "ta": "விவசாய தொழில்நுட்ப அதிகாரி",
+      "si": "කෘෂිකර්ම තාක්ෂණ නිලධාරී"
+    },
+    "description": {
+      "en": "Uses modern tech to improve farming and crop yield.",
+      "ta": "விவசாயம் மற்றும் பயிர் விளைச்சலை மேம்படுத்த நவீன தொழில்நுட்பத்தைப் பயன்படுத்துகிறார்.",
+      "si": "ගොවිතැන සහ බෝග අස්වැන්න වැඩි දියුණු කිරීම සඳහා නවීන තාක්ෂණය භාවිතා කිරීම."
+    },
+    "salaryRange": {
+      "en": "Rs. 50,000 - 120,000 / month",
+      "ta": "ரூ. 50,000 - 120,000 / மாதம்",
+      "si": "රු. 50,000 - 120,000 / මාසිකව"
+    },
+    "qualifications": {
+      "en": "Diploma in Agriculture or BSc Agriculture.",
+      "ta": "விவசாயத்தில் டிப்ளோமா அல்லது பிஎஸ்சி விவசாயம்.",
+      "si": "කෘෂිකර්මය පිළිබඳ ඩිප්ලෝමාවක් හෝ කෘෂිකර්ම විද්‍යාවේදී උපාධියක්."
+    },
+    "institutes": {
+      "en": "Schools of Agriculture (Govt), Rajarata Uni, Peradeniya Uni",
+      "ta": "விவசாயப் பள்ளிகள் (அரசு), ராஜரட்ட பல்கலைக்கழகம், பேராதனை பல்கலைக்கழகம்",
+      "si": "කෘෂිකර්ම පාසල් (රජයේ), රජරට විශ්වවිද්‍යාලය, පේරාදෙණිය විශ්වවිද්‍යාලය"
+    },
+    "scholarships": {
+      "en": "Govt free education for selected students",
+      "ta": "தேர்ந்தெடுக்கப்பட்ட மாணவர்களுக்கு அரசு இலவச கல்வி",
+      "si": "තෝරාගත් සිසුන් සඳහා රජයේ නොමිලේ අධ්‍යාපනය"
+    },
+    "tags": ["science", "nature", "farming", "practical"],
+    "category": "Agriculture"
+  }
+]
