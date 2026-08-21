@@ -28,28 +28,37 @@ let databaseMode = 'disconnected';
 async function connectDB() {
   if (hasRealUri) {
     try {
-      await mongoose.connect(mongoUri);
+      await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 10000 });
       User = require('./models/User');
       databaseMode = 'mongodb';
       console.log('Connected to MongoDB Atlas successfully!');
+      return;
     } catch (err) {
       if (err.message && err.message.includes('bad auth')) {
-        console.error('\n❌ MongoDB Authentication Failed: Please check your username and password in server/.env.');
-        console.error('If your password contains special characters (like @, #, $, %), make sure to URL-encode them.\n');
+        console.error('\n❌ MongoDB Authentication Failed: wrong username/password in server/.env.');
+        console.error('   If your password contains special characters (like @, #, $, %), URL-encode them.');
+      } else if (err.message && (err.message.includes('timed out') || err.code === 'ENOTFOUND')) {
+        console.error('\n❌ Could not reach MongoDB Atlas. Check Network Access in Atlas');
+        console.error('   (add your IP or 0.0.0.0/0) and that the cluster host in the URI is correct.');
       } else {
-        console.error('MongoDB connection error:', err);
+        console.error('MongoDB connection error:', err.message || err);
       }
-      process.exit(1);
+      console.error('⚠️  Falling back to the in-memory user store so the API keeps running.');
+      console.error('   ⚠️  Users you create now are NOT saved to Atlas — fix MONGODB_URI and restart.\n');
     }
-    return;
   }
 
   // Fallback: in-memory user store (no credentials or downloads needed; data resets on restart)
   const { createMemoryUserStore } = require('./memoryUserStore');
   User = createMemoryUserStore();
   databaseMode = 'in-memory';
-  console.warn('ℹ️  No usable MONGODB_URI found — using an in-memory user store (dev only, data resets on restart).');
-  console.log('In-memory user store ready!');
+  if (hasRealUri) {
+    // We got here because the real database was configured but unreachable.
+    databaseMode = 'in-memory (Atlas unreachable — check server logs!)';
+  } else {
+    console.warn('ℹ️  No usable MONGODB_URI found — using an in-memory user store (dev only, data resets on restart).');
+  }
+  console.log('In-memory user store ready! (API is running, but data will not persist)');
 }
 
 // Health check endpoint
@@ -169,6 +178,18 @@ app.get('/api/auth/me', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n❌ Port ${PORT} is already in use — another copy of the backend is probably still running.`);
+    console.error('   Close the other terminal/window that runs the server, then start again.');
+    console.error('   (Or set PORT=5001 in server/.env and update the proxy target in client/vite.config.ts.)\n');
+    process.exit(1);
+  } else {
+    console.error('Server failed to start:', err);
+    process.exit(1);
+  }
 });
