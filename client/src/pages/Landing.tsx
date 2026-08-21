@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -36,7 +35,6 @@ function useInView(threshold = 0.15) {
 
 /* ────────────────────────────────────────────────────────── */
 export const Landing: React.FC = () => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   // counters

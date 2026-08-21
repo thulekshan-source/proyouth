@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('./models/User');
 
 const app = express();
 
@@ -14,20 +13,54 @@ app.use(express.json());
 
 // Connect to MongoDB
 const mongoUri = process.env.MONGODB_URI || '';
+const hasRealUri = mongoUri && !mongoUri.includes('<db_password>');
+
 if (mongoUri.includes('<db_password>')) {
-  console.warn('\n⚠️ WARNING: Please replace "<db_password>" in server/.env with your actual MongoDB Atlas database password!\n');
+  console.warn('\n⚠️ WARNING: "MONGODB_URI" in server/.env still contains "<db_password>".');
+  console.warn('   Add your MongoDB Atlas password to connect to your real database.\n');
 }
 
-mongoose.connect(mongoUri)
-  .then(() => console.log('Connected to MongoDB Atlas successfully!'))
-  .catch(err => {
-    if (err.message && err.message.includes('bad auth')) {
-      console.error('\n❌ MongoDB Authentication Failed: Please check your username and password in server/.env.');
-      console.error('If your password contains special characters (like @, #, $, %), make sure to URL-encode them.\n');
-    } else {
-      console.error('MongoDB connection error:', err);
+// Active user store: the Mongoose model when a real database is configured,
+// or a pure in-memory store as a zero-setup dev fallback.
+let User;
+let databaseMode = 'disconnected';
+
+async function connectDB() {
+  if (hasRealUri) {
+    try {
+      await mongoose.connect(mongoUri);
+      User = require('./models/User');
+      databaseMode = 'mongodb';
+      console.log('Connected to MongoDB Atlas successfully!');
+    } catch (err) {
+      if (err.message && err.message.includes('bad auth')) {
+        console.error('\n❌ MongoDB Authentication Failed: Please check your username and password in server/.env.');
+        console.error('If your password contains special characters (like @, #, $, %), make sure to URL-encode them.\n');
+      } else {
+        console.error('MongoDB connection error:', err);
+      }
+      process.exit(1);
     }
-  });
+    return;
+  }
+
+  // Fallback: in-memory user store (no credentials or downloads needed; data resets on restart)
+  const { createMemoryUserStore } = require('./memoryUserStore');
+  User = createMemoryUserStore();
+  databaseMode = 'in-memory';
+  console.warn('ℹ️  No usable MONGODB_URI found — using an in-memory user store (dev only, data resets on restart).');
+  console.log('In-memory user store ready!');
+}
+
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', database: databaseMode });
+});
+
+connectDB().catch(err => {
+  console.error('Failed to start database:', err);
+  process.exit(1);
+});
 
 // Register Route
 app.post('/api/auth/register', async (req, res) => {
