@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { apiFetch } from '../lib/api';
 import { Mail, Lock, AlertCircle, ArrowRight } from 'lucide-react';
 
 export const Register: React.FC = () => {
@@ -20,22 +21,16 @@ export const Register: React.FC = () => {
     setError(null);
 
     try {
-      const res = await fetch('/api/auth/register', {
+      const data = await apiFetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
 
-      const data = await res.json();
-      
-      if (!res.ok) {
-        throw new Error(data.error || 'Registration failed');
-      }
-
       login(data.token, data.user);
       navigate('/');
     } catch (err: any) {
-      setError(err.message);
+      setError(err.message || 'Registration failed');
     } finally {
       setLoading(false);
     }

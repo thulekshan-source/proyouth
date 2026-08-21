@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { apiFetch } from '../lib/api';
 
 interface User {
   id: string;
@@ -28,17 +29,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const res = await fetch('/api/auth/me', {
+          const data = await apiFetch('/api/auth/me', {
             headers: { Authorization: `Bearer ${token}` }
           });
-          if (res.ok) {
-            const data = await res.json();
-            setUser(data.user);
-          } else {
-            localStorage.removeItem('token');
-          }
-        } catch (error) {
-          console.error("Failed to fetch user");
+          setUser(data.user);
+        } catch {
+          // Invalid/expired token, or the backend is temporarily unreachable
+          localStorage.removeItem('token');
         }
       }
       setLoading(false);
